@@ -1,0 +1,16 @@
+package com.suhee.basic.ch2;
+
+import org.springframework.context.support.GenericApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class Main {
+
+	public static void main(String[] args) {
+		GenericApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml");
+		Greeter g = ctx.getBean("greeter", Greeter.class);
+		String msg = g.greet("스프링 테스트");
+		System.out.println(msg);
+		ctx.close();
+	}
+
+}
