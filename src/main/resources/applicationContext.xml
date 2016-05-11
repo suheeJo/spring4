@@ -8,4 +8,8 @@
 		<property name="format" value="%s, 안녕하세요!" />
 	</bean>
 
+	<bean id="greeter2" class="com.suhee.basic.ch2.Greeter">
+		<property name="format" value="%s, 즐거웠어요!" />
+	</bean>
+	
 </beans>
