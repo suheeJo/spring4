@@ -1,4 +1,4 @@
-package com.suhee.basic.ch3;
+package com.suhee.basic.ch3.model;
 
 import java.util.Date;
 

@@ -1,8 +1,10 @@
-package com.suhee.basic.ch3;
+package com.suhee.basic.ch3.dao;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.suhee.basic.ch3.model.Member;
 
 public class MemberDao {
 	
