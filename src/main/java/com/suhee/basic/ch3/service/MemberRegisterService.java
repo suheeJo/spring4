@@ -9,11 +9,15 @@ import com.suhee.basic.ch3.model.RegisterRequest;
 
 public class MemberRegisterService {
 	
+	private MemberDao memberDao = new MemberDao();
+	
+	/*
 	private MemberDao memberDao;
 	
 	public MemberRegisterService(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}
+	*/
 	
 	public void regist(RegisterRequest req) {
 		Member member = memberDao.selectByEmail(req.getEmail());
