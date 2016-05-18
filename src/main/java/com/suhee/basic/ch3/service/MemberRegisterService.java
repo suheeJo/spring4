@@ -2,6 +2,7 @@ package com.suhee.basic.ch3.service;
 
 import java.util.Date;
 
+import com.suhee.basic.ch3.dao.CachedMemberDao;
 import com.suhee.basic.ch3.dao.MemberDao;
 import com.suhee.basic.ch3.exception.AlreadyExistingMemberException;
 import com.suhee.basic.ch3.model.Member;
@@ -9,7 +10,7 @@ import com.suhee.basic.ch3.model.RegisterRequest;
 
 public class MemberRegisterService {
 	
-	private MemberDao memberDao = new MemberDao();
+	private MemberDao memberDao = new CachedMemberDao();
 	
 	/*
 	private MemberDao memberDao;
