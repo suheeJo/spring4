@@ -1,8 +1,12 @@
 package com.suhee.basic.ch3.service;
 
-import com.suhee.basic.ch3.dao.CachedMemberDao;
 import com.suhee.basic.ch3.dao.MemberDao;
 
 public class ChangePasswordService {
-	private MemberDao memberDao = new CachedMemberDao();
+
+	private MemberDao memberDao;
+	
+	public ChangePasswordService(MemberDao memberDao) {
+		this.memberDao = memberDao;
+	}
 }
