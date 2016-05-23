@@ -27,5 +27,10 @@
 		<property name="memberDao" ref="memberDao" />
 		<property name="memberPrinter" ref="memberPrinter" />
 	</bean>
+	
+	<bean id="versionPrinter" class="com.suhee.basic.ch3.assembler.VersionPrinter">
+		<property name="majorVersion" value="4" />
+		<property name="minorVersion" value="1" />
+	</bean>
 		
 </beans>

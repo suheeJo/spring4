@@ -9,6 +9,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.suhee.basic.ch3.assembler.MemberInfoPrinter;
 import com.suhee.basic.ch3.assembler.MemberListPrinter;
+import com.suhee.basic.ch3.assembler.VersionPrinter;
 import com.suhee.basic.ch3.exception.AlreadyExistingMemberException;
 import com.suhee.basic.ch3.exception.IdPasswordNotMatchingException;
 import com.suhee.basic.ch3.exception.MemberNotFoundException;
@@ -42,6 +43,9 @@ public class XMLMain {
 				continue;
 			}else if(command.startsWith("info ")) {
 				processInfoCommand(command.split(" "));
+				continue;
+			}else if(command.startsWith("version")) {
+				processVersionCommand();
 				continue;
 			}
 			
@@ -118,5 +122,10 @@ public class XMLMain {
 		
 		MemberInfoPrinter memberInfoPrinter = ctx.getBean("infoPrinter", MemberInfoPrinter.class);
 		memberInfoPrinter.printMemberInfo(args[1]);
+	}
+	
+	private static void processVersionCommand() {
+		VersionPrinter versionPrinter = ctx.getBean("versionPrinter", VersionPrinter.class);
+		versionPrinter.print();
 	}
 }
