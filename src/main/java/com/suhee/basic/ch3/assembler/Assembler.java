@@ -1,6 +1,6 @@
 package com.suhee.basic.ch3.assembler;
 
-import com.suhee.basic.ch3.service.ChangePasswordService;
+import com.suhee.basic.ch3.service.UpdatePasswordService;
 import com.suhee.basic.ch3.service.MemberRegisterService;
 
 import lombok.Getter;
@@ -11,11 +11,11 @@ import com.suhee.basic.ch3.dao.MemberDao;
 public class Assembler {
 	private MemberDao memberDao;
 	private MemberRegisterService memberRegisterService;
-	private ChangePasswordService changePasswordService;
+	private UpdatePasswordService changePasswordService;
 	
 	public Assembler() {
 		memberDao = new MemberDao();
 		memberRegisterService = new MemberRegisterService(memberDao);
-		changePasswordService = new ChangePasswordService(memberDao);
+		changePasswordService = new UpdatePasswordService(memberDao);
 	}
 }

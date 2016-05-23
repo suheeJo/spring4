@@ -4,11 +4,11 @@ import com.suhee.basic.ch3.dao.MemberDao;
 import com.suhee.basic.ch3.exception.IdPasswordNotMatchingException;
 import com.suhee.basic.ch3.model.Member;
 
-public class ChangePasswordService {
+public class UpdatePasswordService {
 
 	private MemberDao memberDao;
 	
-	public ChangePasswordService(MemberDao memberDao) {
+	public UpdatePasswordService(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}
 	

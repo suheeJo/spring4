@@ -4,19 +4,22 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import com.suhee.basic.ch3.assembler.Assembler;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
 import com.suhee.basic.ch3.exception.AlreadyExistingMemberException;
 import com.suhee.basic.ch3.exception.IdPasswordNotMatchingException;
 import com.suhee.basic.ch3.exception.MemberNotFoundException;
 import com.suhee.basic.ch3.model.RegisterRequest;
-import com.suhee.basic.ch3.service.UpdatePasswordService;
 import com.suhee.basic.ch3.service.MemberRegisterService;
+import com.suhee.basic.ch3.service.UpdatePasswordService;
 
-public class AssemblerMain {
-	
-	private static Assembler assembler = new Assembler();
+public class XMLMain {
+	private static ApplicationContext ctx = null;
 	
 	public static void main(String[] args) throws IOException {
+		ctx = new GenericXmlApplicationContext("classpath:applicationContext3.xml");
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while(true) {
 			System.out.println("명령어를 입력하세요: ");
@@ -40,7 +43,7 @@ public class AssemblerMain {
 			return;
 		}
 		
-		MemberRegisterService memberRegisterService = assembler.getMemberRegisterService();
+		MemberRegisterService memberRegisterService = ctx.getBean("memberRegisterService", MemberRegisterService.class);
 		RegisterRequest registerRequest = new RegisterRequest();
 		registerRequest.setEmail(args[1]);
 		registerRequest.setName(args[2]);
@@ -66,10 +69,10 @@ public class AssemblerMain {
 			return;
 		}
 		
-		UpdatePasswordService changePasswordService = assembler.getChangePasswordService();
+		UpdatePasswordService updatePasswordService = ctx.getBean("updatePasswordService", UpdatePasswordService.class);
 		
 		try {
-			changePasswordService.updatePassword(args[1], args[2], args[3]);
+			updatePasswordService.updatePassword(args[1], args[2], args[3]);
 			System.out.println("암호를 변경했습니다.\n");
 		}catch(MemberNotFoundException e) {
 			System.out.println("존재하지 않는 이메일입니다.\n");
