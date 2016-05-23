@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="memberRegisterService" class="com.suhee.basic.ch3.service.MemberRegisterService">
+		<constructor-arg ref="memberDao" />
+	</bean>
+	
+	<bean id="updatePasswordService" class="com.suhee.basic.ch3.service.UpdatePasswordService">
+		<constructor-arg ref="memberDao" />
+	</bean>
+	
+	<bean id="memberListPrinter" class="com.suhee.basic.ch3.assembler.MemberListPrinter">
+		<constructor-arg ref="memberDao"></constructor-arg>
+		<constructor-arg ref="memberPrinter"></constructor-arg>
+	</bean>
+	
+	<bean id="infoPrinter" class="com.suhee.basic.ch3.assembler.MemberInfoPrinter">
+		<property name="memberDao" ref="memberDao" />
+		<property name="memberPrinter" ref="memberPrinter" />
+	</bean>
+	
+	<bean id="versionPrinter" class="com.suhee.basic.ch3.assembler.VersionPrinter">
+		<property name="majorVersion" value="4" />
+		<!-- <property name="minorVersion" value="1" /> -->
+		<property name="minorVersion">
+			<value>1</value>
+		</property>
+	</bean>
+		
+</beans>

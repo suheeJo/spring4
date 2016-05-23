@@ -21,7 +21,10 @@ public class XMLMain {
 	private static ApplicationContext ctx = null;
 	
 	public static void main(String[] args) throws IOException {
-		ctx = new GenericXmlApplicationContext("classpath:applicationContext3.xml");
+//		ctx = new GenericXmlApplicationContext("classpath:applicationContext3.xml");
+		String[] conf = {"classpath:conf1.xml", "classpath:conf2.xml"};
+		ctx = new GenericXmlApplicationContext(conf);
+//		ctx = new GenericXmlApplicationContext("classpath:conf1.xml", "classpath:conf2.xml");
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while(true) {
