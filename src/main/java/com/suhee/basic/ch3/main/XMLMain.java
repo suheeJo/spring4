@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
+import com.suhee.basic.ch3.assembler.MemberListPrinter;
 import com.suhee.basic.ch3.exception.AlreadyExistingMemberException;
 import com.suhee.basic.ch3.exception.IdPasswordNotMatchingException;
 import com.suhee.basic.ch3.exception.MemberNotFoundException;
@@ -33,7 +34,11 @@ public class XMLMain {
 				processNewCommand(command.split(" "));
 			}else if(command.startsWith("update ")) {
 				processUpdateCommand(command.split(" "));
+			}else if(command.startsWith("list")) {
+				processListCommand();
 			}
+			
+			printHelp();
 		}
 	}
 	
@@ -91,5 +96,10 @@ public class XMLMain {
 		System.out.println("info 이메일");
 		System.out.println("version");
 		System.out.println();
+	}
+	
+	private static void processListCommand() {
+		MemberListPrinter memberListPrinter = ctx.getBean("memberListPrinter", MemberListPrinter.class);
+		memberListPrinter.printAll();
 	}
 }

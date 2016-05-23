@@ -14,5 +14,13 @@
 	<bean id="updatePasswordService" class="com.suhee.basic.ch3.service.UpdatePasswordService">
 		<constructor-arg ref="memberDao" />
 	</bean>
+	
+	<bean id="memberPrinter" class="com.suhee.basic.ch3.model.MemberPrinter">
+	</bean>
+	
+	<bean id="memberListPrinter" class="com.suhee.basic.ch3.assembler.MemberListPrinter">
+		<constructor-arg ref="memberDao"></constructor-arg>
+		<constructor-arg ref="memberPrinter"></constructor-arg>
+	</bean>
 		
 </beans>
