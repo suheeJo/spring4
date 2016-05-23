@@ -30,7 +30,10 @@
 	
 	<bean id="versionPrinter" class="com.suhee.basic.ch3.assembler.VersionPrinter">
 		<property name="majorVersion" value="4" />
-		<property name="minorVersion" value="1" />
+		<!-- <property name="minorVersion" value="1" /> -->
+		<property name="minorVersion">
+			<value>1</value>
+		</property>
 	</bean>
 		
 </beans>
