@@ -15,12 +15,8 @@
 	
 	<bean id="memberRegisterService" class="com.suhee.basic.ch4.service.MemberRegisterService" />
 	
-	<!-- 
-	<bean id="memberPrinter" class="com.suhee.basic.ch4.model.MemberPrinter">
-		<qualifier value="sysout" />
-	</bean>
-	<bean id="memberPrinter2" class="com.suhee.basic.ch4.model.MemberPrinter" />
-	 -->
+	<bean id="memberPrinter" class="com.suhee.basic.ch4.service.MemberPrinter" />
+	<bean id="memberPrinter2" class="com.suhee.basic.ch4.service.MemberPrinter" />
 	
 	<bean id="infoPrinter" class="com.suhee.basic.ch4.service.MemberInfoPrinter" />
 	

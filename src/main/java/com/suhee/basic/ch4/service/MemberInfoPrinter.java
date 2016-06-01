@@ -1,11 +1,9 @@
 package com.suhee.basic.ch4.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.suhee.basic.ch4.dao.MemberDao;
 import com.suhee.basic.ch4.model.Member;
-import com.suhee.basic.ch4.model.MemberPrinter;
 
 //@Setter
 public class MemberInfoPrinter {
@@ -17,8 +15,7 @@ public class MemberInfoPrinter {
 		this.memberDao = memberDao;
 	}
 
-	/*@Autowired
-	@Qualifier("sysout")*/
+	@Autowired
 	public void setMemberPrinter(MemberPrinter memberPrinter) {
 		this.memberPrinter = memberPrinter;
 	}

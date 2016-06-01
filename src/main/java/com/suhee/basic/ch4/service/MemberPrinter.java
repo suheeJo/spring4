@@ -1,4 +1,6 @@
-package com.suhee.basic.ch4.model;
+package com.suhee.basic.ch4.service;
+
+import com.suhee.basic.ch4.model.Member;
 
 public class MemberPrinter {
 	public void print(Member member) {
