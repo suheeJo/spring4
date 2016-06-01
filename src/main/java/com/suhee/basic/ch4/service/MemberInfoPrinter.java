@@ -7,9 +7,14 @@ import com.suhee.basic.ch4.model.Member;
 
 //@Setter
 public class MemberInfoPrinter {
-	@Autowired(required=false)
 	private MemberDao memberDao;
 	private MemberPrinter memberPrinter;
+	
+	@Autowired
+	public void injectDependency(MemberDao memberDao, MemberPrinter printer) {
+		this.memberDao = memberDao;
+		this.memberPrinter = printer;
+	}
 	
 	public void setMemberDao(MemberDao memberDao) {
 		this.memberDao = memberDao;
