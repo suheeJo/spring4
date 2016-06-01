@@ -9,7 +9,7 @@ import com.suhee.basic.ch4.model.MemberPrinter;
 
 //@Setter
 public class MemberInfoPrinter {
-	@Autowired
+	@Autowired(required=false)
 	private MemberDao memberDao;
 	private MemberPrinter memberPrinter;
 	
@@ -17,8 +17,8 @@ public class MemberInfoPrinter {
 		this.memberDao = memberDao;
 	}
 
-	@Autowired
-	@Qualifier("sysout")
+	/*@Autowired
+	@Qualifier("sysout")*/
 	public void setMemberPrinter(MemberPrinter memberPrinter) {
 		this.memberPrinter = memberPrinter;
 	}
