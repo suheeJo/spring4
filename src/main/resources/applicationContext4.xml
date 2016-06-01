@@ -9,13 +9,15 @@
 		
 	<context:annotation-config />
 
-	<bean id="memberDao" class="com.suhee.basic.ch3.dao.MemberDao" />
+	<bean id="memberDao" class="com.suhee.basic.ch4.dao.MemberDao" />
 	
-	<bean id="memberRegisterService" class="com.suhee.basic.ch3.service.MemberRegisterService" />
+	<bean id="memberRegisterService" class="com.suhee.basic.ch4.service.MemberRegisterService" />
 	
-	<bean id="memberPrinter" class="com.suhee.basic.ch3.model.MemberPrinter" />
-	<bean id="memberPrinter2" class="com.suhee.basic.ch3.model.MemberPrinter" />
+	<bean id="memberPrinter" class="com.suhee.basic.ch4.model.MemberPrinter">
+		<qualifier value="sysout" />
+	</bean>
+	<bean id="memberPrinter2" class="com.suhee.basic.ch4.model.MemberPrinter" />
 	
-	<bean id="infoPrinter" class="com.suhee.basic.ch3.assembler.MemberInfoPrinter" />
+	<bean id="infoPrinter" class="com.suhee.basic.ch4.service.MemberInfoPrinter" />
 	
 </beans>

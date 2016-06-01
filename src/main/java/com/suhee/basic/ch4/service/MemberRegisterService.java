@@ -4,10 +4,10 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.suhee.basic.ch3.dao.MemberDao;
-import com.suhee.basic.ch3.exception.AlreadyExistingMemberException;
-import com.suhee.basic.ch3.model.Member;
-import com.suhee.basic.ch3.model.RegisterRequest;
+import com.suhee.basic.ch4.dao.MemberDao;
+import com.suhee.basic.ch4.exception.AlreadyExistingMemberException;
+import com.suhee.basic.ch4.model.Member;
+import com.suhee.basic.ch4.model.RegisterRequest;
 
 public class MemberRegisterService {
 	

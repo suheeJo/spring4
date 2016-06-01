@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.suhee.basic.ch3.model.Member;
+import com.suhee.basic.ch4.model.Member;
 
 public class MemberDao {
 	
