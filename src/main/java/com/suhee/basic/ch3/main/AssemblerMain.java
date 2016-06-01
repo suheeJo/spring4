@@ -14,7 +14,7 @@ import com.suhee.basic.ch3.service.MemberRegisterService;
 
 public class AssemblerMain {
 	
-	private static Assembler assembler = new Assembler();
+	private static Assembler assembler;
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -56,7 +56,8 @@ public class AssemblerMain {
 			memberRegisterService.regist(registerRequest);
 			System.out.println("등록했습니다.\n");
 		}catch(AlreadyExistingMemberException e) {
-			System.out.println("이미 존재하는 이메일입니다.\n");
+			System.out.println(e.getMessage());
+//			System.out.println("이미 존재하는 이메일입니다.\n");
 		}
 	}
 	
