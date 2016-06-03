@@ -2,7 +2,7 @@ package com.suhee.basic.ch4.service;
 
 import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 
 import com.suhee.basic.ch4.dao.MemberDao;
 import com.suhee.basic.ch4.exception.AlreadyExistingMemberException;
@@ -11,9 +11,10 @@ import com.suhee.basic.ch4.model.RegisterRequest;
 
 public class MemberRegisterService {
 	
+	@Resource(name="memberDao")
 	private MemberDao memberDao;
 
-	@Autowired(required=false)
+//	@Autowired
 	public MemberRegisterService(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}

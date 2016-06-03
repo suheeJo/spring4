@@ -1,5 +1,7 @@
 package com.suhee.basic.ch4.service;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -8,20 +10,15 @@ import com.suhee.basic.ch4.model.Member;
 
 //@Setter
 public class MemberInfoPrinter {
+	@Resource
 	private MemberDao memberDao;
 	private MemberPrinter memberPrinter;
-	
-	@Autowired
-	public void injectDependency(MemberDao memberDao, @Qualifier("sysout") MemberPrinter printer) {
-		this.memberDao = memberDao;
-		this.memberPrinter = printer;
-	}
 	
 	public void setMemberDao(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}
 
-	@Autowired
+	@Resource(name="memberPrinter")
 	public void setMemberPrinter(MemberPrinter memberPrinter) {
 		this.memberPrinter = memberPrinter;
 	}
