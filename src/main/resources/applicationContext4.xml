@@ -13,14 +13,17 @@
 	
 	<bean id="memberRegisterService" class="com.suhee.basic.ch4.service.MemberRegisterService" />
 	
+	<bean id="memberPrinter" class="com.suhee.basic.ch4.service.MemberPrinter" />
+	<bean id="memberPrinter2" class="com.suhee.basic.ch4.service.MemberPrinter" />
+	
+	<bean id="infoPrinter" class="com.suhee.basic.ch4.service.MemberInfoPrinter">
+		<property name="memberPrinter" ref="memberPrinter2" />
+	</bean>
+	
 	<!-- 
 	<bean id="memberPrinter" class="com.suhee.basic.ch4.service.MemberPrinter">
 		<qualifier value="sysout" />
 	</bean>
 	 -->
-	
-	<bean id="memberPrinter" class="com.suhee.basic.ch4.service.MemberPrinter" />
-	
-	<bean id="infoPrinter" class="com.suhee.basic.ch4.service.MemberInfoPrinter" />
 	
 </beans>
