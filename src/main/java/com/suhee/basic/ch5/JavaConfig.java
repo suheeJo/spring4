@@ -12,7 +12,7 @@ public class JavaConfig {
 	
 	@Bean
 	public MemberRegisterService memberRegisterService() {
-		return new MemberRegisterService();
+		return new MemberRegisterService(memberDao());
 	}
 	
 	@Bean

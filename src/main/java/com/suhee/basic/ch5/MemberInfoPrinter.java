@@ -9,6 +9,7 @@ public class MemberInfoPrinter {
 	private MemberPrinter memberPrinter;
 	
 	public void setMemberDao(MemberDao memberDao) {
+		System.out.println("memberInfoPrinter 주입: " + memberDao);
 		this.memberDao = memberDao;
 	}
 
