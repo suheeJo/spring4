@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(JavaConfig.class);
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(JavaConfig.class, JavaConfig2.class);
 		MemberRegisterService registerService = ctx.getBean("memberRegisterService", MemberRegisterService.class);
 		MemberInfoPrinter infoPrinter = ctx.getBean("infoPrinter", MemberInfoPrinter.class);
 		

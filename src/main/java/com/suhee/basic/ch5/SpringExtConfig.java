@@ -26,7 +26,7 @@ public class SpringExtConfig extends JavaConfig {
 	@Bean
 	public MemberInfoPrinter infoPrinter() {
 		if(infoPrinterBean == null) {
-			infoPrinterBean = super.infoPrinter();
+//			infoPrinterBean = super.infoPrinter();
 		}
 		return infoPrinterBean;
 	}

@@ -14,15 +14,4 @@ public class JavaConfig {
 	public MemberRegisterService memberRegisterService() {
 		return new MemberRegisterService(memberDao());
 	}
-	
-	@Bean
-	public MemberPrinter memberPrinter() {
-		return new MemberPrinter();
-	}
-	
-	@Bean
-	public MemberInfoPrinter infoPrinter() {
-		MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
-		return infoPrinter;
-	}
 }
