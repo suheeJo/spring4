@@ -2,12 +2,11 @@ package com.suhee.basic.ch5;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-//@Setter
 public class MemberInfoPrinter {
-	@Autowired
 	private MemberDao memberDao;
 	private MemberPrinter memberPrinter;
-	
+
+	@Autowired
 	public void setMemberDao(MemberDao memberDao) {
 		System.out.println("memberInfoPrinter 주입: " + memberDao);
 		this.memberDao = memberDao;
