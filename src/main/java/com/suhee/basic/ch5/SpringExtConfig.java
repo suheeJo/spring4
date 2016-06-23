@@ -8,7 +8,7 @@ public class SpringExtConfig extends JavaConfig {
 	@Bean
 	public MemberDao memberDao() {
 		if(memberDaoBean == null) {
-			memberDaoBean = super.memberDao();
+//			memberDaoBean = super.memberDao();
 		}
 		return memberDaoBean;
 	}
