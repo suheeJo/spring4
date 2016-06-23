@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class JavaConfig2 {
 
 	@Autowired
-	private MemberDao memberDao;
+	private JavaConfig javaConfig;
 	
 	@Bean
 	public MemberPrinter memberPrinter() {
@@ -18,7 +18,7 @@ public class JavaConfig2 {
 	@Bean
 	public MemberInfoPrinter infoPrinter() {
 		MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
-		infoPrinter.setMemberDao(memberDao);
+		infoPrinter.setMemberDao(javaConfig.memberDao());
 		infoPrinter.setMemberPrinter(memberPrinter());
 		return infoPrinter;
 	}
