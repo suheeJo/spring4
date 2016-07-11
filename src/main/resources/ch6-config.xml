@@ -4,8 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="client" class="com.suhee.basic.ch6.Client">
-		<property name="host" ref="서버" />
+	<bean id="client2" class="com.suhee.basic.ch6.Client2" init-method="connect" destroy-method="close">
+		<property name="host" ref="서버4" />
 	</bean>
 	
 </beans>

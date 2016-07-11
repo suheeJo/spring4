@@ -7,7 +7,7 @@ public class Main {
 		// Client.setHost() 실행
 		// Client.afterPropertiesSet() 실행
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(JavaConfig.class);
-		Client client = ctx.getBean("client", Client.class);
+		Client2 client = ctx.getBean("client2", Client2.class);
 		// Client.send() to 서버2
 		client.send();
 		// Client.destory() 실행
