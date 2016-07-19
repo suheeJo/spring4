@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- 공통 기능을 제공할 클래스를 빈으로 등록 -->
+	<bean id="exeTimeAspect" class="com.suhee.basic.ch7.ExeTimeAspect" />
+	
+	<aop:config>
+		<aop:aspect id="measureAspect" ref="exeTimeAspect">
+			<aop:pointcut expression="execution(public * com.suhee.basic.ch7 ..*(..))" id="publicMethod" />
+			<aop:around method="measure" pointcut-ref="publicMethod" />
+		</aop:aspect>
+	</aop:config>
+	
+	<bean id="impeCal" class="com.suhee.basic.ch7.ImpeCalculator" />
+	<bean id="recCal" class="com.suhee.basic.ch7.RecCalculator" />
+	
+</beans>
