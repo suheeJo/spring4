@@ -1,4 +1,8 @@
-package com.suhee.basic.ch7.ch7;
+package com.suhee.basic.ch7.main;
+
+import com.suhee.basic.ch7.ch7.ExeTimeCalculator;
+import com.suhee.basic.ch7.ch7.ImpeCalculator;
+import com.suhee.basic.ch7.ch7.RecCalculator;
 
 public class Main {
 

@@ -1,7 +1,8 @@
-package com.suhee.basic.ch7.ch7;
+package com.suhee.basic.ch7.main;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.suhee.basic.ch7.ch7.Calculator;
 import com.suhee.basic.ch7.config.JavaConfig;
 
 public class MainJavaAspect {

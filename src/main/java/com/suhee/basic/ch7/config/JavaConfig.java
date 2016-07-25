@@ -9,7 +9,7 @@ import com.suhee.basic.ch7.ch7.ExeTimeAspect2;
 import com.suhee.basic.ch7.ch7.RecCalculator;
 
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass=true)
 public class JavaConfig {
 	
 	@Bean

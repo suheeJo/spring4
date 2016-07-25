@@ -1,6 +1,8 @@
-package com.suhee.basic.ch7.ch7;
+package com.suhee.basic.ch7.main;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
+
+import com.suhee.basic.ch7.ch7.Calculator;
 
 public class MainXmlAspect {
 	public static void main(String[] args) {
