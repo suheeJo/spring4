@@ -1,8 +1,8 @@
-package com.suhee.basic.ch7;
+package com.suhee.basic.ch7.ch7;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-public class MainXMlPojo {
+public class MainXmlAspect {
 	public static void main(String[] args) {
 		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:ch7-config.xml");
 		

@@ -1,4 +1,4 @@
-package com.suhee.basic.ch7;
+package com.suhee.basic.ch7.ch7;
 
 public class ExeTimeCalculator implements Calculator {
 	
