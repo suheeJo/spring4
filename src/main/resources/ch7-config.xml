@@ -7,15 +7,17 @@
 		http://www.springframework.org/schema/aop
 		http://www.springframework.org/schema/aop/spring-aop.xsd">
 	 
+	 <!-- 
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 	 
 	<bean id="exeTimeAspect" class="com.suhee.basic.ch7.ExeTimeAspect2" />
+	 -->
 
 	<!-- 공통 기능을 제공할 클래스를 빈으로 등록 -->
 	<bean id="exeTimeAspect" class="com.suhee.basic.ch7.ch7.ExeTimeAspect" />
 	
 	<aop:config proxy-target-class="true">
-		<aop:aspect id="measureAspect" ref="exeTimeAspect">
+		<aop:aspect id="measureAspect" ref="exeTimeAspect" order="1">
 			<aop:pointcut expression="execution(public * com.suhee.basic.ch7.ch7 ..*(..))" id="publicMethod" />
 			<aop:around method="measure" pointcut-ref="publicMethod" />
 		</aop:aspect>
