@@ -15,6 +15,7 @@
 		<mvc:jsp prefix="/WEB-INF/views/" />
 	</mvc:view-resolvers>
 	
+	<mvc:view-controller path="/main" view-name="main"/>
+		
 	<bean class="com.suhee.basic.ch11.RegisterController" />
-	
 </beans>
